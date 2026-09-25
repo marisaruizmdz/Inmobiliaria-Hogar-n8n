@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="JigBnXr68OrwXFkW2bfX">
+    <mxGraphModel dx="1563" dy="948" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=15;" value="1. Airtable Trigger:&#xa;Nuevo Lead&#xa;(Estado: Pendiente)" vertex="1">
+          <mxGeometry height="90" width="180" x="10" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=15;" value="2. AI Agent:&#xa;Generar Propuesta&#xa;(Procesamiento NLP)" vertex="1">
+          <mxGeometry height="90" width="170" x="240" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=14;fontStyle=1;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;OpenAI Chat Model:&lt;br&gt;GPT-5-mini&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="190" x="80" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=14;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Memoria:&lt;br&gt;&lt;b&gt;Simple Window&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="150" x="280" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Airtable Tool:&lt;br&gt;&lt;b&gt;Buscar Propiedad&lt;/b&gt;&lt;/font&gt;" vertex="1">
+          <mxGeometry height="65" width="170" x="440" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=15;" value="Airtable: Registrar Error&#xa;(Update Record)" vertex="1">
+          <mxGeometry height="75" width="170" x="240" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=15;" value="3. Airtable: Guardar&#xa;Borrador IA&#xa;(Estado: Esperando Aprobación)" vertex="1">
+          <mxGeometry height="90" width="180" x="460" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=15;" value="4. Espera Aprobación&#xa;Humana (Wait Node)&#xa;[Pausa HITL Webhook]" vertex="1">
+          <mxGeometry height="90" width="210" x="680" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=15;" value="¿Propuesta&#xa;Aprobada?" vertex="1">
+          <mxGeometry height="120" width="140" x="920" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=15;" value="5a. Airtable: Marcar Aprobado&#xa;(Estado: Aprobado)" vertex="1">
+          <mxGeometry height="75" width="190" x="1150" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=15;" value="6. Gmail: Enviar Propuesta Final&#xa;(Mapeo Thread ID)" vertex="1">
+          <mxGeometry height="75" width="200" x="1380" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=15;" value="5b. Airtable: Marcar Rechazado&#xa;(Estado: Rechazado)" vertex="1">
+          <mxGeometry height="75" width="190" x="1150" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" edge="1" parent="1" source="3" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" edge="1" parent="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" edge="1" parent="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" edge="1" parent="1" source="10" style="fontSize=16;" target="11" value="True">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" edge="1" parent="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" edge="1" parent="1" source="10" style="fontSize=16;" target="13" value="False">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_err" edge="1" parent="1" source="3" style="dashed=1;strokeColor=#b85450;" target="7" value="Error">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_llm" edge="1" parent="1" source="4" style="dashed=1;strokeColor=#82b366;" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_mem" edge="1" parent="1" source="5" style="dashed=1;strokeColor=#82b366;" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tool" edge="1" parent="1" source="6" style="dashed=1;strokeColor=#d6b656;" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;startSize=32;fontStyle=1;fontSize=15;" value="EVIDENCIAS DE VALIDACIÓN Y EJECUCIÓN DE FLUJO" vertex="1">
+          <mxGeometry height="190" width="1300" x="130" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="15" parent="14" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;spacingLeft=10;fontSize=14;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;CASO 1: CAMINO FELIZ (APROBADO POR MARTILLERO)&lt;br&gt;• Entrada: &#39;Busco comprar casa de 3 dorm en Bermejo USD 180.000&lt;br&gt;• HITL Email: Martillero hace clic en [Aprobar Propuesta]&lt;br&gt;• Resultado: Email despachado vía Gmail al cliente + Lead actualizado a &#39;Aprobado&#39; en Airtable.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="580" x="30" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="16" parent="14" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=10;fontSize=14;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;CASO 2: CAMINO DE RECHAZO / RE-COTIZACIÓN&lt;br&gt;• Entrada: &#39;Busco comprar casa en zona cara por USD 50.000&lt;br&gt;• HITL Email: Martillero detecta valor irreal y cliquea [Rechazar / Solicitar Ajuste]&lt;br&gt;• Resultado: Lead cambia a &#39;Rechazado&#39; en Airtable sin enviar correo al cliente.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="590" x="660" y="45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
