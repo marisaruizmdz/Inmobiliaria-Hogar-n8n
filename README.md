@@ -11,3 +11,4 @@ Proyecto Final para la certificación de CoderHouse.
 ## 📄 Archivos Incluidos
 * `TFinal_CoderHouse_MarisaRuiz_Ecosistema.pdf` - Documentación completa y evidencias.
 * `InmobiliariaHogar_Flujo_n8n.json` - Workflow ejecutable de n8n sanitizado.
+* `Anexo_Capturas_Evidencias.pdf` - Capturas de todo el flujo en n8n y de planillas de Airtable
